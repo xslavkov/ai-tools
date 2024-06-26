@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/api/public/v1/search/lots-public": {
+            "get": {
+                "operationId": "CarparkSearchController_findAllPublic",
+                "summary": "Find lot with distance and occupancy",
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "locationLatitude",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "locationLongitude",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "locationRadius",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "lotIds",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "pageFrom",
+                        "required": false,
+                        "in": "query",
+                        "description": "last lot name from previous search",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "priceFrom",
+                        "required": false,
+                        "in": "query",
+                        "description": "int, 120 == 1 euro 20 cents",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "priceTo",
+                        "required": false,
+                        "in": "query",
+                        "description": "int, 120 == 1 euro 20 cents",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "intervalFrom",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "intervalTo",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "required": false,
+                        "in": "query",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "freeFrom",
+                        "required": false,
+                        "in": "query",
+                        "description": "free from date",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "search"
+                ],
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    }
+}
